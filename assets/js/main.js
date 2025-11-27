@@ -24,3 +24,4 @@ animate(chars2, {
   delay: stagger(80),
   loop: true,
 });
+
