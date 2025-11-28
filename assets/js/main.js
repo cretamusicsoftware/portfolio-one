@@ -1,6 +1,4 @@
-import { animate, splitText, stagger } from "animejs";
-
-const { animate } = anime;
+const { animate, splitText, stagger } = anime;
 
 const { chars: char1 } = splitText(".home__profession-1", {
   chars: true,
@@ -24,4 +22,3 @@ animate(chars2, {
   delay: stagger(80),
   loop: true,
 });
-

@@ -564,12 +564,170 @@ img {
 }
 
 /*=============== WORK ===============*/
+.work__tabs {
+  background-color: var(--container-color);
+  padding: 1.25rem 2rem;
+  border-radius: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.work__button {
+  background: none;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  font-size: var(--small-font-size);
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+.work__button i {
+  font-size: 1rem;
+}
+
+.work__button:hover {
+  color: var(--first-color);
+}
+
+.work__area {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.work__content {
+  display: grid;
+  row-gap: 4rem;
+}
+
+.work__card {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.work__data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work__subtitle {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-regular);
+  color: var(--first-color);
+}
+
+.work__year {
+  font-size: var(--h1-font-size);
+}
+
+.work__line {
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    hsla(var(--hue), 60%, 64%, 0) 60%,
+    var(--first-color-alt-2)
+  );
+  position: absolute;
+  left: -0.25rem;
+}
+
+.work__line::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--first-color-alt-2);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -1px;
+  top: -6px;
+}
 
 /* Show & hide sections */
+.work__area [data-content] {
+  display: none;
+}
 
+.work-active[data-content] {
+  display: grid;
+}
+
+.work__button.work-active {
+  color: var(--first-color);
+}
 /* Active tab */
 
 /*=============== SERVICES ===============*/
+
+.services__container {
+  row-gap: 2rem;
+}
+
+.services__card {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border-radius: 3rem;
+  display: grid;
+  row-gap: 1.5rem;
+  overflow: hidden;
+}
+
+.services__card .blob {
+  z-index: 0;
+  top: -7.75rem;
+  left: -7.75rem;
+}
+
+.services__card .blob-2 {
+  left: initial;
+  right: -7.75rem;
+}
+
+.services__data,
+.services__info {
+  position: relative;
+  z-index: 1;
+}
+
+.services__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.services__skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.25rem;
+}
+.services__skill {
+  background-color: var(--container-color);
+  color: var(--title-color);
+  border: 1px solid var(--title-color);
+  padding: 4px 10px;
+  border-radius: 4rem;
+  font-size: var(--small-font-size);
+  font-family: var(--second-font);
+}
+
+.services__button {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: var(--body-color);
+  color: var(--title-color);
+  display: grid;
+  border-radius: 0.5rem;
+  place-items: center;
+  border: 2px solid var(--first-color);
+  font-size: 1.5rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  transition: color 0.4s;
+}
 
 /* Hide services info */
 
@@ -599,6 +757,9 @@ img {
   .projects__card {
     padding-inline: 1rem;
   }
+  .work__tabs {
+    padding-inline: 1rem;
+  }
 }
 /* For medium devices */
 @media screen and (min-width: 540px) {
@@ -606,7 +767,8 @@ img {
     width: 460px;
     margin-inline: auto;
   }
-  .about__container {
+  .about__container,
+  .work__container {
     grid-template-columns: 460px;
     justify-content: center;
   }
@@ -621,6 +783,10 @@ img {
   .projects__card {
     width: 350px;
   }
+  .work__tabs {
+    width: 330px;
+    justify-self: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -632,6 +798,22 @@ img {
     width: 220px;
     height: 220px;
   }
+  /* .work__container {
+    grid-template-columns: 600px;
+  }
+  .work__area {
+    padding-left: 0;
+  }
+  .work__card {
+    grid-template-columns: repeat(2, 270px);
+    justify-self: center;
+    column-gap: 3rem;
+  }
+  .work__line {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+  } */
 }
 
 /* For large devices */
@@ -771,6 +953,26 @@ img {
   .projects__button {
     top: 1.5rem;
     right: 1.5rem;
+  }
+  .work__container {
+    grid-template-columns: 1050px;
+    row-gap: 3rem;
+  }
+  .work__content {
+    row-gap: 5rem;
+  }
+  .work__title {
+    font-size: var(--bigger-font-size);
+  }
+  .work__card {
+    grid-template-columns: repeat(2, 450px);
+    column-gap: 9rem;
+  }
+  .work__title {
+    font-size: var(--bigger-font-size);
+  }
+  .work__subtitle {
+    font-size: var(--h3-font-size);
   }
 }
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
