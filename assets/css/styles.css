@@ -1007,6 +1007,7 @@ img {
     grid-template-columns: 460px;
     justify-content: center;
   }
+
   .about__data,
   .about__data .section__title {
     text-align: center;
@@ -1047,7 +1048,6 @@ img {
     margin-inline: auto;
   }
   .services__container {
-    grid-template-columns: repeat(2, 350px);
     align-items: flex-start;
   }
 }
