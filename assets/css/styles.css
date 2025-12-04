@@ -597,7 +597,6 @@ img {
   padding: 1.25rem 2rem;
   border-radius: 4rem;
   display: flex;
-  justify-content: space-between;
 }
 .work__button {
   background: none;
@@ -1031,7 +1030,7 @@ img {
     width: 220px;
     height: 220px;
   }
-  /* .work__container {
+  .work__container {
     grid-template-columns: 600px;
   }
   .work__area {
@@ -1046,7 +1045,7 @@ img {
     left: 0;
     right: 0;
     margin-inline: auto;
-  } */
+  }
   .services__container {
     grid-template-columns: repeat(2, 350px);
     align-items: flex-start;
